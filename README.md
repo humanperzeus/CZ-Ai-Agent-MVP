@@ -7,34 +7,35 @@ A lightweight AI agent to replicate Binance CEO CZ’s online presence for X rep
 - **Time Allocation**: 1 hour planning (MVP scope).
 
 ## Approach
-1. **Data Source**: Real-time X posts from CZ’s official account (@cz_binance) via X API.
+1. **Data Source**: Scrape CZ’s public X posts (@cz_binance) via browser automation (Puppeteer).
 2. **Agent Logic**: 
+   - Logs into an X account to bypass API costs.
    - Detects tags/questions (e.g., “Hey CZAI, what’s your take on BTC?”).
-   - Fetches CZ’s recent posts for context.
-   - Feeds to ChatGPT-4 with a custom prompt.
-3. **Output**: Posts replies mimicking CZ’s tone on X/Instagram.
+   - Scrapes CZ’s recent posts for context.
+   - Feeds to ChatGPT-4 with a custom prompt (simulated in MVP).
+3. **Output**: Generates replies mimicking CZ’s tone for X/Instagram.
 
 ## Tech Stack
-- **Backend**: Node.js (lightweight, async-friendly).
-- **LLM**: ChatGPT-4 via API (e.g., OpenAI or OpenRouter).
-- **API**: X API for real-time post fetching.
+- **Backend**: Node.js with Puppeteer (browser automation, free data fetching).
+- **LLM**: ChatGPT-4 via API (e.g., OpenAI, mocked in MVP).
+- **No API**: Avoids X API costs using login-based scraping.
 
 ## Data Fed to Agent
-- **Input**: CZ’s latest 10-20 X posts (context window).
-- **Prompt**: "Respond as CZ: crypto expert, confident, short replies."
-- **Misinformation Handling**: Stick to verified CZ posts; no external news yet (MVP scope).
+- **Input**: CZ’s latest public X posts (scraped live from his profile).
+- **How Selected**: Browser automation navigates to @cz_binance, grabs visible posts.
+- **Misinformation Handling**: Uses only CZ’s verified account data; no external sources yet (MVP scope).
 
 ## Future Enhancements
-- **Vector Database**: Store historical CZ content (X posts, replies, threads) in a vector DB (e.g., Pinecone) for richer context.
-- **YouTube Transcripts**: Crawl CZ’s Binance YouTube channel or interviews, transcribe via speech-to-text API (e.g., Google Speech), and add to DB.
-- **X AMAs/Spaces**: Scrape transcripts from CZ’s X Spaces or AMAs, vectorize, and combine with post data for deeper personality insights.
-- **Misinformation Filter**: Cross-check external mentions with trusted crypto sources (e.g., CoinDesk, Binance blog).
-- **Multi-Platform**: Expand posting to Instagram with tailored formats (e.g., captions + visuals).
+- **Vector Database**: Store historical CZ content (X posts, replies, threads) in a vector DB (e.g., Pinecone).
+- **YouTube Transcripts**: Crawl Binance YouTube or CZ interviews, transcribe, and add to DB.
+- **X AMAs/Spaces**: Scrape transcripts from CZ’s X Spaces/AMAs for deeper context.
+- **Misinformation Filter**: Cross-check with trusted crypto sources (e.g., Binance blog).
+- **Posting Logic**: Automate X/Instagram replies via API or browser.
 
 ## Setup
 1. Clone this repo.
-2. `npm install` (for X and OpenAI APIs).
-3. Add API keys (X, OpenAI).
+2. `npm install puppeteer`.
+3. Update `agent.js` with your X account credentials (private, not committed).
 4. Run `node agent.js`.
 
-See `agent.js` for pseudo-code.
+See `agent.js` for working code.
