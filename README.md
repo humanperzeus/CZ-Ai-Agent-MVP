@@ -25,8 +25,11 @@ A lightweight AI agent to replicate Binance CEO CZ’s online presence for X rep
 - **Misinformation Handling**: Stick to verified CZ posts; no external news yet (MVP scope).
 
 ## Future Enhancements
-- Vector database for historical CZ content (YouTube, blogs).
-- Misinformation filter (cross-check with trusted crypto sources).
+- **Vector Database**: Store historical CZ content (X posts, replies, threads) in a vector DB (e.g., Pinecone) for richer context.
+- **YouTube Transcripts**: Crawl CZ’s Binance YouTube channel or interviews, transcribe via speech-to-text API (e.g., Google Speech), and add to DB.
+- **X AMAs/Spaces**: Scrape transcripts from CZ’s X Spaces or AMAs, vectorize, and combine with post data for deeper personality insights.
+- **Misinformation Filter**: Cross-check external mentions with trusted crypto sources (e.g., CoinDesk, Binance blog).
+- **Multi-Platform**: Expand posting to Instagram with tailored formats (e.g., captions + visuals).
 
 ## Setup
 1. Clone this repo.
