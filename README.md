@@ -34,8 +34,9 @@ A lightweight AI agent to replicate Binance CEO CZ’s online presence for X rep
 
 ## Setup
 1. Clone this repo.
-2. `npm install puppeteer`.
-3. Update `agent.js` with your X account credentials (private, not committed).
-4. Run `node agent.js`.
+2. Run `npm init -y` to initialize a new Node.js project.
+3. Run `npm install puppeteer` to install dependencies.
+4. Update `agent.js` with your X account credentials (private, not committed).
+5. Run `node agent.js` to start the agent.
 
 See `agent.js` for working code.
